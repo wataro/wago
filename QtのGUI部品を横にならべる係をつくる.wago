@@ -1,0 +1,4 @@
+仮名 :
+  - 係
+コード : |
+    係 = QtGui.QHBoxLayout(self)

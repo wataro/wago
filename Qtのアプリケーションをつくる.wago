@@ -1,0 +1,4 @@
+仮名 :
+  - アプリケーション
+コード : |
+  アプリケーション = QtGui.QApplication(sys.argv)

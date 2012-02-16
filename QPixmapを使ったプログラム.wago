@@ -1,0 +1,39 @@
+コード :
+    - Qtのモジュールを使う.wago :
+        モジュール : QtGui, QtCore
+    - クラスを継承してサブクラスをつくる.wago :
+        クラス : QtGui.QWidget
+        サブクラス : Example
+    - 
+      - コンストラクタをつくる.wago
+      -
+        - クラスの親のコンストラクタを呼ぶ.wago :
+            クラス : Example
+        - メソッドを呼ぶ.wago :
+            メソッド : initUI
+      - メソッドをつくる.wago :
+          メソッド : initUI
+      -
+        - 画像ファイルをQtのラベルにする.wago :
+            画像ファイル : 'test.png'
+            ラベル : lbl
+        - QtのGUI部品を横にならべる係をつくる.wago :
+            係 : hbox
+        - 係にQtのラベルをならべてもらう.wago :
+            係 : hbox
+            ラベル : lbl
+      - キーを入力するとQWidgetを終了するメソッドをつくる.wago :
+          キー : Key_Escape
+    - 実行ファイルとして起動したとき.wago
+    -
+      - モジュールを使う.wago :
+          モジュール : sys
+      - Qtのアプリケーションをつくる.wago :
+          アプリケーション : app
+      - クラスのインスタンスをつくる.wago :
+          クラス : Example
+          インスタンス : widget
+      - QWidgetを全画面表示させる.wago :
+          QWidget : widget
+      - Qtのアプリケーションを終了する.wago :
+          アプリケーション : app

@@ -1,0 +1,8 @@
+仮名 :
+  - 画像ファイル
+  - ラベル
+コード : |
+    pixmap = QtGui.QPixmap("画像ファイル")
+    ラベル = QtGui.QLabel(self)
+    ラベル.setPixmap(pixmap)
+

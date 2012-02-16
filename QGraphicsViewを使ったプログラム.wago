@@ -1,0 +1,28 @@
+コード :
+    - Qtのモジュールを使う.wago :
+        モジュール : QtGui, QtCore
+    - クラスを継承してサブクラスをつくる.wago :
+        クラス : QtGui.QGraphicsView
+        サブクラス : Example
+    - 
+      - 引数をつかってコンストラクタをつくる.wago :
+          引数 : scene, parent = None 
+      -
+        - 引数をわたして親クラスのコンストラクタを呼ぶ.wago :
+            引数 : scene, parent
+            親クラス : QtGui.QGraphicsView
+      - キーを入力するとQWidgetを終了するメソッドをつくる.wago :
+          キー : Key_Escape
+    - 実行ファイルとして起動したとき.wago
+    -
+      - モジュールを使う.wago :
+          モジュール : sys
+      - Qtのアプリケーションをつくる.wago :
+          アプリケーション : app
+      - クラスのインスタンスをつくる.wago :
+          クラス : Example
+          インスタンス : widget
+      - QWidgetを全画面表示させる.wago :
+          QWidget : widget
+      - Qtのアプリケーションを終了する.wago :
+          アプリケーション : app

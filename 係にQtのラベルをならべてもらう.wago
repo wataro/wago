@@ -1,0 +1,7 @@
+仮名 :
+  - 係
+  - ラベル
+コード : |
+    係.addWidget(ラベル)
+    self.setLayout(係)
+
