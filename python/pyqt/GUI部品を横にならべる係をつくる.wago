@@ -1,0 +1,3 @@
+code : |
+    係 = QtGui.QHBoxLayout(self)
+係 :

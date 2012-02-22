@@ -1,0 +1,3 @@
+code : |
+    super( クラス , self).__init__()
+クラス :

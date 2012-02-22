@@ -1,0 +1,3 @@
+code : |
+    from PyQt4 import モジュール
+モジュール : 
