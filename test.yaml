@@ -1,8 +1,0 @@
-- wago : すでにある何か
-  何か : kore
-- code : |
-    if __name__ == '__main__':
-        print ( test )
-  test :
-- wago : すでにある別の処理
-  別の処理 : are
