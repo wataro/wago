@@ -16,10 +16,10 @@ def showlist ():
         print (f)
         print (load (f))
 
-# 一つの ctkl ファイルとその名前の辞書をもらって、解釈する
-def interpret (ctklFile, nameDict):
-#    print (ctklFile, nameDict) # for debug
-    whole = yaml.load(open(ctklFile).read())
+# 一つの wago ファイルとその名前の辞書をもらって、解釈する
+def interpret (wagoFile, nameDict):
+#    print (wagoFile, nameDict) # for debug
+    whole = yaml.load(open(wagoFile).read())
     pseudonym = whole.get('仮名') # if '仮名' is not exist, return None
     code = whole['コード']
     if not pseudonym:
@@ -35,8 +35,8 @@ def interpretNode (node, indent=''):
     result = ''
     if isinstance(node, dict):
         assert(len(node.keys()) == 1)
-        for ctklFile, nameDict in node.items():
-            result = interpret(ctklFile, node[ctklFile])
+        for wagoFile, nameDict in node.items():
+            result = interpret(wagoFile, node[wagoFile])
     else:
         result = interpret(node, {})
     return indent + result.replace('\n', '\n' + indent)
@@ -65,14 +65,14 @@ TEMPLATE = '''
 コード : |
     
 '''
-def generate_ctkl(new_ctkl_file):
-    'ctkl のテンプレートを生成する'
-    open(new_ctkl_file, 'w').write(TEMPLATE[1:])
+def generate_wago(new_wago_file):
+    'wago のテンプレートを生成する'
+    open(new_wago_file, 'w').write(TEMPLATE[1:])
 
-def main(ctklFile):
-    'ctkl のメイン処理'
+def main(wagoFile):
+    'wago のメイン処理'
     i = Interpreter()
-    walk(load(ctklFile), i.do)
+    walk(load(wagoFile), i.do)
     return i.result
 
 if __name__ == '__main__':
@@ -81,14 +81,14 @@ if __name__ == '__main__':
     subparser = parser.add_subparsers()
 
     run_parser = subparser.add_parser('run')
-    run_parser.add_argument('ctkl_file')
+    run_parser.add_argument('wago_file')
 
     gen_parser = subparser.add_parser('generate')
-    gen_parser.add_argument('new_ctkl_file')
+    gen_parser.add_argument('new_wago_file')
 
     results = parser.parse_args()
-    if hasattr(results, 'ctkl_file'):
-        print (main(results.ctkl_file))
-    if hasattr(results, 'new_ctkl_file'):
-        generate_ctkl(results.new_ctkl_file)
+    if hasattr(results, 'wago_file'):
+        print (main(results.wago_file))
+    if hasattr(results, 'new_wago_file'):
+        generate_wago(results.new_wago_file)
 

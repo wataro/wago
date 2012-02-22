@@ -1,39 +1,38 @@
-コード :
-    - Qtのモジュールを使う.wago :
-        モジュール : QtGui, QtCore
-    - クラスを継承してサブクラスをつくる.wago :
-        クラス : QtGui.QWidget
-        サブクラス : Example
-    - 
-      - コンストラクタをつくる.wago
-      -
-        - クラスの親のコンストラクタを呼ぶ.wago :
-            クラス : Example
-        - メソッドを呼ぶ.wago :
-            メソッド : initUI
-      - メソッドをつくる.wago :
-          メソッド : initUI
-      -
-        - 画像ファイルをQtのラベルにする.wago :
-            画像ファイル : 'test.png'
-            ラベル : lbl
-        - QtのGUI部品を横にならべる係をつくる.wago :
-            係 : hbox
-        - 係にQtのラベルをならべてもらう.wago :
-            係 : hbox
-            ラベル : lbl
-      - キーを入力するとQWidgetを終了するメソッドをつくる.wago :
-          キー : Key_Escape
-    - 実行ファイルとして起動したとき.wago
+- wago : Qtのモジュールを使う
+  モジュール : QtGui, QtCore
+- wago : クラスを継承してサブクラスをつくる
+  クラス : QtGui.QWidget
+  サブクラス : Example
+- 
+  - wago : コンストラクタをつくる
+  -
+    - wago : クラスの親のコンストラクタを呼ぶ
+      クラス : Example
+    - wago : メソッドを呼ぶ
+      メソッド : initUI
+  - wago : メソッドをつくる
+    メソッド : initUI
+  -
+    - wago : 画像ファイルをQtのラベルにする
+      画像ファイル : 'test.png'
+      ラベル : lbl
+    - wago : QtのGUI部品を横にならべる係をつくる
+      係 : hbox
+    - wago : 係にQtのラベルをならべてもらう
+      係 : hbox
+      ラベル : lbl
+  - wago : キーを入力するとQWidgetを終了するメソッドをつくる
+    キー : Key_Escape
+    - wago : 実行ファイルとして起動したとき
     -
-      - モジュールを使う.wago :
-          モジュール : sys
-      - Qtのアプリケーションをつくる.wago :
-          アプリケーション : app
-      - クラスのインスタンスをつくる.wago :
-          クラス : Example
-          インスタンス : widget
-      - QWidgetを全画面表示させる.wago :
-          QWidget : widget
-      - Qtのアプリケーションを終了する.wago :
-          アプリケーション : app
+      - wago : モジュールを使う
+        モジュール : sys
+      - wago : Qtのアプリケーションをつくる
+        アプリケーション : app
+      - wago : クラスのインスタンスをつくる
+        クラス : Example
+        インスタンス : widget
+      - wago : QWidgetを全画面表示させる
+        QWidget : widget
+      - wago : Qtのアプリケーションを終了する
+        アプリケーション : app
