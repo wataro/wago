@@ -1,8 +1,0 @@
-# キーコードについては、以下のリファレンスを参照すること
-# http://www.riverbankcomputing.co.uk/static/Docs/PyQt4/html/qt.html#Key-enum
-仮名 :
-  - キー
-コード : |
-    def keyPressEvent(self, e):
-        if e.key() == QtCore.Qt.キー:
-            self.close()

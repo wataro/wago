@@ -1,4 +1,0 @@
-仮名 :
-  - QWidget
-コード : |
-    QWidget .show()
