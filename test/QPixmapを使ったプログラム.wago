@@ -1,5 +1,6 @@
-- wago : python.モジュールを使う
-  モジュール : QtGui, QtCore
+- wago : python.モジュールのサブモジュールを使う
+  モジュール : PyQt4
+  サブモジュール : QtGui, QtCore
 - wago : python.クラスを継承してサブクラスをつくる
   クラス : QtGui.QWidget
   サブクラス : Example
