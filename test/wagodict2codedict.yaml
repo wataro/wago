@@ -1,0 +1,6 @@
+- test:
+    wago : python.文字列を表示する
+    文字列 : "Hello, world!"
+  expected:
+    code : |
+        print ("Hello, world!")
