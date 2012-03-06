@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import yaml
 from wagopath2filepath import wagopath2filepath
 from wagodict2codedict import wagodict2codedict
 
@@ -13,7 +14,9 @@ def wagodict2codedict_find(wagodict):
     # ...  print (actual)
     # ...  print (t['expected'])
     '''
-    pass
+    filepath = wagopath2filepath(wagodict['wago'])
+    codes = yaml.load(open(filepath).read())
+    return [wagodict2codedict(wagodict, cd) for cd in codes]
 
 if __name__ == '__main__':
     import doctest

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import os
+from wagopath2filepath import wagopath2filepath
 
-def new (filename, keywords = []):
+def new (filename):
     '''
     あたらしくwagoファイルをつくる。
     wagoファイルは、相対パス名。
@@ -9,14 +10,14 @@ def new (filename, keywords = []):
     '''
     text  = 'code : |\n'
     text += '  /* write code here */\n'
-    for kw in keywords:
-        assert (kw in filename)
-        text += kw + ' : \n'
+    text += 'wagoキー : \n'
+    text += 'wago : path.to.wagoファイル\n'
+    text += 'wagoキー : 値\n'
+    path = wagopath2filepath(filename)
+    if os.path.exists(path) :
+        print ('NOT CREATE')
+        print ('    ' + path + ' : already exists')
     else:
-        text += 'キーワード : \n'
-    pathList = filename.split('.')
-    if '.wago' == filename[-len('.wago'):]:
-        pathList = filename[:-len('.wago')].split('.')
-    path = os.path.join(*pathList) + '.wago'
-    print ('Create ' + path)
-    open(path, 'w').write(text)
+        open(path, 'w').write(text)
+        print ('CREATE ')
+        print ('    ' + path)
