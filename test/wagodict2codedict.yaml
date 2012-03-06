@@ -1,6 +1,21 @@
-- test:
+- wagodict:
     wago : python.文字列を表示する
-    文字列 : "Hello, world!"
+    文字列 : Hello, world!
+  codedict:
+    code : |
+        print ("文字列")
+    文字列 :
   expected:
     code : |
         print ("Hello, world!")
+- wagodict:
+    wago : python.文字列を表示する
+    別のキーワード : Hello, world!
+  codedict:
+    code : |
+        print ("文字列")
+    文字列 :
+  expected:
+    code : |
+        print ("文字列")
+    文字列 :
