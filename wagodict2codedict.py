@@ -5,11 +5,12 @@ def wagodict2codedict(wagodict, codedict):
     >>> import yaml
     >>> tests = yaml.load(open('test/wagodict2codedict.yaml').read())
     >>> for t in tests:
-    ...  actual = wagodict2codedict(t['wagodict'], t['codedict'])
+    ...  wagodict2codedict(t['wagodict'], t['codedict'])
+    ...  actual = t['wagodict']
+    ...  #print (actual)
+    ...  #print (t['expected'])
     ...  assert actual == t['expected']
 
-    # ...  print (actual)
-    # ...  print (t['expected'])
     '''
     replacementRules = {k:v for k,v in wagodict.items() if k != 'wago'}
     replacementTargets = [k for k in codedict if k != 'code']
@@ -19,9 +20,12 @@ def wagodict2codedict(wagodict, codedict):
         if k in replacementTargets:
             dstCodeDict['code'] = dstCodeDict['code'].replace(k, v)
             dstCodeDict.pop(k)
+            wagodict.pop(k)
+            wagodict.pop('wago')
         else:
             pass
-    return dstCodeDict
+    if not 'wago' in wagodict:
+        wagodict.update(dstCodeDict)
 
 if __name__ == '__main__':
     import doctest
