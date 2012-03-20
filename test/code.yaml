@@ -1,0 +1,6 @@
+- wagofile : test.code関数のテスト01
+  expected :
+    - code : |
+        print ("Hello, world!")
+    
+
