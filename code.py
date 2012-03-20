@@ -9,9 +9,11 @@ def code(wagofile):
     >>> tests = yaml.load(open('test/code.yaml').read())
     >>> for t in tests:
     ...  actual = code(t['wagofile'])
-    ...  print (actual)
-    ...  print (t['expected'])
-    #...  assert actual == t['expected']
+    ...  assert actual == t['expected']
+
+    #...  print (actual)
+    #...  print (t['expected'])
+
     '''
     com = Community()
     filepath = wagopath2filepath(wagofile)
