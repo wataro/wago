@@ -16,6 +16,5 @@
         print ("文字列")
     文字列 :
   expected:
-    code : |
-        print ("文字列")
-    文字列 :
+    wago : python.文字列を表示する
+    別のキーワード : Hello, world!
