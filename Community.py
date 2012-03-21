@@ -4,7 +4,7 @@ from wagopath2filepath import wagopath2filepath
 from wagodict2codedict import wagodict2codedict
 
 class Community:
-    def bring_up(self, wagodict):
+    def bring_up(self, wagodict, **kwargs):
         '''
         >>> com = Community()
         >>> tests = yaml.load(open('test/Community.bring_up.yaml').read())
