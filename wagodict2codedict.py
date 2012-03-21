@@ -7,9 +7,9 @@ def wagodict2codedict(wagodict, codedict):
     >>> for t in tests:
     ...  wagodict2codedict(t['wagodict'], t['codedict'])
     ...  actual = t['wagodict']
-    ...  print (actual)
-    ...  print (t['expected'])
-    ...  #assert actual == t['expected']
+    ...  #print (actual)
+    ...  #print (t['expected'])
+    ...  assert actual == t['expected']
 
     '''
     replacementRules = {k:v for k,v in wagodict.items() if k != 'wago'}
@@ -23,11 +23,13 @@ def wagodict2codedict(wagodict, codedict):
             wagodict.pop(k)
         else:
             pass
-    print ('wagodict:', wagodict)
-    print ('replacementRules:', replacementRules)
-    if len(wagodict) < 1 + len(replacementRules):
+    if len(wagodict) < 1 + len(replacementRules): # 置換が発生したとき
         assert 1 == len(wagodict), str(wagodict)
-        wagodict = dstCodeDict.copy()
+        wagodict.clear()
+        wagodict.update(dstCodeDict)
+    if not replacementRules: # 置換ルールがなかったとき
+        wagodict.clear()
+        wagodict.update(dstCodeDict)
 
 if __name__ == '__main__':
     import doctest
