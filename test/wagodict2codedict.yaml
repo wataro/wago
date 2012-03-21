@@ -18,3 +18,16 @@
   expected:
     wago : python.文字列を表示する
     別のキーワード : Hello, world!
+- wagodict :
+    wago : python.モジュールのサブモジュールを使う
+    モジュール : PyQt4
+    サブモジュール : QtGui, QtCore
+  codedict :
+    code : |
+      from モジュール import サブモジュール
+    モジュール : 
+    サブモジュール :
+  expected :
+    code : |
+        from PyQt4 import QtGui, QtCore
+
