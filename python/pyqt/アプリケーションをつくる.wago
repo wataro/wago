@@ -1,3 +1,3 @@
-code : |
-  アプリケーション = QtGui.QApplication(sys.argv)
-アプリケーション :
+- code : |
+    アプリケーション = QtGui.QApplication(sys.argv)
+  アプリケーション :

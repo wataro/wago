@@ -1,2 +1,2 @@
-code : |
-  if __name__ == '__main__': 
+- code : |
+    if __name__ == '__main__': 

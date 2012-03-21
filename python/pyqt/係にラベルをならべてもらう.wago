@@ -1,5 +1,5 @@
-code : |
+- code : |
     係.addWidget(ラベル)
     self.setLayout(係)
-係 :
-ラベル :
+  係 :
+  ラベル :

@@ -1,6 +1,6 @@
-code : |
+- code : |
     pixmap = QtGui.QPixmap("画像ファイル")
     ラベル = QtGui.QLabel(self)
     ラベル.setPixmap(pixmap)
-画像ファイル :
-ラベル :
+  画像ファイル :
+  ラベル :
