@@ -1,8 +1,0 @@
-- test:
-    wago : test.ダミー
-    ダミー : dummy
-  expected: WagoItem
-- test:
-    code : |
-        'this is a dummy.'
-  expected: CodeItem
