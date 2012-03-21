@@ -24,10 +24,18 @@
     サブモジュール : QtGui, QtCore
   codedict :
     code : |
-      from モジュール import サブモジュール
+        from モジュール import サブモジュール
     モジュール : 
     サブモジュール :
   expected :
     code : |
         from PyQt4 import QtGui, QtCore
+- wagodict:
+    wago : python.コンストラクタをつくる
+  codedict:
+    code : |
+        def __init__(self):
+  expected:
+    code : |
+        def __init__(self):
 

@@ -19,6 +19,7 @@ def code(wagofile):
     filepath = wagopath2filepath(wagofile)
     baby = yaml.load(open(filepath).read())
     walk(baby, com.bring_up)
+    print (yaml.dump(baby))
     return baby
 
 if __name__ == '__main__':
