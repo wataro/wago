@@ -17,6 +17,8 @@ class Community:
         '''
         filepath = wagopath2filepath(wagodict['wago'])
         code = yaml.load(open(filepath).read())
+        assert code
+        assert isinstance( code, list), str(code)
         codedict = code[0]
         wagodict2codedict(wagodict, codedict)
 
