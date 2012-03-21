@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 # 入れ子になっているリストを再帰的にたどりながら何かする
-def walkBody(data, func):
+def walkBody(data, func, indent = 0):
     for i in data:
         if isinstance(i, list):
-            walkBody(i, func)
+            walkBody(i, func, indent + 1)
         else:
-            func(i)
+            func(i, indent=indent)
 
 def walk(data, func):
     walkBody(data, func)
