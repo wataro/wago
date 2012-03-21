@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
 class CodeWriter:
+    def __init__(self):
+        self.result = ''
+        self.indent = '   '
+
     def write(self, wagodict, **kwargs):
         '''
         >>> import yaml
