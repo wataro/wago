@@ -5,16 +5,16 @@ class CodeWriter:
         self.result = ''
         self.indent = '   '
 
-    def write(self, wagodict, **kwargs):
+    def write(self, codedict, **kwargs):
         '''
         >>> import yaml
         >>> writer = CodeWriter()
         >>> tests = yaml.load(open('test/CodeWriter.write.yaml').read())
         >>> for t in tests:
-        ...  writer.write(t['wagodict'])
-        ...  print (t['wagodict'])
+        ...  writer.write(t['codedict'])
+        ...  print (t['codedict'])
         ...  print (t['expected'])
-        ...  #assert t['wagodict'] == t['expected']
+        ...  #assert t['codedict'] == t['expected']
         '''
         pass
 
