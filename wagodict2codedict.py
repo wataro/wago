@@ -21,8 +21,7 @@ def wagodict2codedict(wagodict, codedict):
             dstCodeDict['code'] = dstCodeDict['code'].replace(k, v)
             dstCodeDict.pop(k)
             wagodict.pop(k)
-            if 'wago' in wagodict:
-                wagodict.pop('wago')
+            wagodict.pop('wago')
         else:
             pass
     if not 'wago' in wagodict:
