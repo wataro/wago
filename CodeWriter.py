@@ -12,9 +12,10 @@ class CodeWriter:
         >>> tests = yaml.load(open('test/CodeWriter.write.yaml').read())
         >>> for t in tests:
         ...  writer.write(t['codedict'], depth=t['depth'])
-        ...  print (t['codedict'])
-        ...  print (t['expected'])
-        ...  #assert t['codedict'] == t['expected']
+        ...  #print (writer.result)
+        ...  #print (t['expected'])
+        ...  assert writer.result == t['expected'],
+                     (writer.result, t['expected'])
         '''
         assert 'depth' in kwargs
         indent = kwargs['depth'] * '    '
