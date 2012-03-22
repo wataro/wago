@@ -14,14 +14,15 @@ class CodeWriter:
         ...  writer.write(t['codedict'], depth=t['depth'])
         ...  #print (writer.result)
         ...  #print (t['expected'])
-        ...  assert writer.result == t['expected'],
-                     (writer.result, t['expected'])
+        ...  assert writer.result == t['expected'], (writer.result, t['expected'])
         '''
         assert 'depth' in kwargs
         indent = kwargs['depth'] * '    '
         assert 'code' in codedict
         assert 1 == len(codedict), str(codedict)
-        self.result += indent + codedict['code'].replace('\n', '\n' + indent)
+        code = indent + codedict['code'].replace('\n', '\n' + indent)
+        code = code.rstrip(' ')
+        self.result += code
 
 if __name__ == '__main__':
     import doctest
