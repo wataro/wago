@@ -3,6 +3,7 @@ import yaml
 from Community import Community
 from walk import walk
 from wagopath2filepath import wagopath2filepath
+from CodeWriter import CodeWriter
 
 def code(wagofile):
     '''
@@ -20,6 +21,9 @@ def code(wagofile):
     baby = yaml.load(open(filepath).read())
     walk(baby, com.bring_up)
     print (yaml.dump(baby))
+    writer = CodeWriter()
+    walk(baby, writer.write)
+    print (writer.result)
     return baby
 
 if __name__ == '__main__':
