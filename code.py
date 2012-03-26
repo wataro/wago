@@ -5,25 +5,30 @@ from walk import walk
 from wagopath2filepath import wagopath2filepath
 from CodeWriter import CodeWriter
 
-def code(wagofile):
+def code(wagofile, **kwargs):
     '''
     >>> tests = yaml.load(open('test/code.yaml').read())
     >>> for t in tests:
     ...  actual = code(t['wagofile'])
+    ... # print (actual)
+    ... # print (t['expected'])
     ...  assert actual == t['expected']
-
-    #...  print (actual)
-    #...  print (t['expected'])
-
     '''
     com = Community()
     filepath = wagopath2filepath(wagofile)
     baby = yaml.load(open(filepath).read())
     walk(baby, com.bring_up)
-    print (yaml.dump(baby))
     writer = CodeWriter()
     walk(baby, writer.write)
-    print (writer.result)
+    if 'verbose' in kwargs and kwargs['verbose']:
+        print (yaml.dump(baby))
+        print (writer.result)
+    if 'output_file' in kwargs:
+        fp = open(kwargs['output_file'], 'w')
+        print (writer.result, file=fp)
+        fp.close()
+        print ('WRITE: %s' % kwargs['output_file'])
+
     return baby
 
 if __name__ == '__main__':
