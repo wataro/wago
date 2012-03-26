@@ -15,10 +15,13 @@ if __name__ == '__main__':
     code_parser = subparser.add_parser('code',
                                       help=code.__doc__)
     code_parser.add_argument('codeWagoFile', help='ファイル名')
+    code_parser.add_argument('-o', '--output-file', help='出力ファイル名')
+    code_parser.add_argument('-v', '--verbose', action='store_true')
     code_parser.set_defaults(func=code)
 
     args = parser.parse_args()
+    print (args)
     if hasattr(args, 'newWagoFile'):
         args.func(args.newWagoFile)
     elif hasattr(args, 'codeWagoFile'):
-        args.func(args.codeWagoFile)
+        args.func(args.codeWagoFile, **vars(args))
