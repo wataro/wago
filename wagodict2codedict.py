@@ -18,7 +18,7 @@ def wagodict2codedict(wagodict, codedict):
     dstCodeDict = codedict.copy()
     for k, v in replacementRules.items():
         if k in replacementTargets:
-            dstCodeDict['code'] = dstCodeDict['code'].replace(k, v)
+            dstCodeDict['code'] = dstCodeDict['code'].replace(k, str(v))
             dstCodeDict.pop(k)
             wagodict.pop(k)
         else:
