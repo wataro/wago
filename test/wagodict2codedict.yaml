@@ -38,4 +38,18 @@
   expected:
     code : |
         def __init__(self):
+- wagodict:
+    wago : python.変数に値を代入する
+    変数 : value
+    値 : 4.0
+  codedict:
+    code : |
+        変数 = 値
+    変数 :
+    値 :
+  expected:
+    code : |
+        value = 4.0
+
+
 
