@@ -1,0 +1,4 @@
+- code : |
+    self.scale(変化率x, 変化率y)
+  変化率x :
+  変化率y :
