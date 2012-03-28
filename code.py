@@ -23,11 +23,10 @@ def code(wagofile, **kwargs):
     if 'verbose' in kwargs and kwargs['verbose']:
         print (yaml.dump(baby))
         print (writer.result)
-    if 'output_file' in kwargs:
-        fp = open(kwargs['output_file'], 'w')
-        print (writer.result, file=fp)
-        fp.close()
-        print ('WRITE: %s' % kwargs['output_file'])
+    if 'output_file' in kwargs and kwargs['output_file']:
+        with open(kwargs['output_file'], 'w') as fp:
+            print (writer.result, file=fp)
+            print ('WRITE: %s' % kwargs['output_file'])
 
     return baby
 
