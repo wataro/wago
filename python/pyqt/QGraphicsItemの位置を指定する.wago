@@ -1,0 +1,4 @@
+- code : |
+    QGraphicsItem.setPos(位置)
+  QGraphicsItem :
+  位置 :
