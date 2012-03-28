@@ -1,6 +1,6 @@
 - code : |
     変数 = ''
-    with open(ファイル) as f:
+    with open('ファイル') as f:
         変数 = f.read()
   変数 :
   ファイル :
