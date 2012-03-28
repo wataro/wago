@@ -8,11 +8,11 @@ def new (filename):
     wagoファイルは、相対パス名。
     フォルダの区切り文字は、OSの依存をなくすため、'.'(ピリオド)。
     '''
-    text  = 'code : |\n'
-    text += '  /* write code here */\n'
-    text += 'wagoキー : \n'
-    text += 'wago : path.to.wagoファイル\n'
-    text += 'wagoキー : 値\n'
+    text  = '- code : |\n'
+    text += '    /* write code here */\n'
+    text += '  wagoキー : \n'
+    text += '- wago : path.to.wagoファイル\n'
+    text += '  wagoキー : 値\n'
     path = wagopath2filepath(filename)
     if os.path.exists(path) :
         print ('NOT CREATE')
